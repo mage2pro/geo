@@ -1,6 +1,6 @@
 {
 	"name": "mage2pro/geo"
-	,"version": "0.0.1"
+	,"version": "1.1.0"
 	,"description": "A geocoding library for my Magento 2 extensions."
 	,"type": "magento2-module"
 	,"homepage": "https://github.com/mage2pro/geo"
