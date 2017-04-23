@@ -1,0 +1,1 @@
+You should not install this package directly: it is installed automatically by [Composer](https://getcomposer.org/) with my «[**Moip**](https://mage2.pro/c/extensions/moip)» Magento 2 extension.
