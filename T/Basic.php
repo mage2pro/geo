@@ -20,8 +20,45 @@ final class Basic extends TestCase {
 		 * @var API $api
 		 */
 		$api = new API(new Adapter
-			// 2017-04-24
-			// PHPDoc: «A locale (optional)».
+			/**
+			 * 2017-04-24
+			 * PHPDoc: «A locale (optional)».
+			 * Google Maps API Reference:
+			 * «language — The language in which to return results.
+			 * See the list of supported languages: https://developers.google.com/maps/faq#languagesupport
+			 * Google often updates the supported languages, so this list may not be exhaustive.
+			 * If language is not supplied,
+			 * the geocoder attempts to use the preferred language as specified in the Accept-Language header,
+			 * or the native language of the domain from which the request is sent.
+			 * The geocoder does its best to provide a street address
+			 * that is readable for both the user and locals.
+			 * To achieve that goal, it returns street addresses in the local language,
+			 * transliterated to a script readable by the user if necessary, observing the preferred language.
+			 * All other addresses are returned in the preferred language.
+			 * Address components are all returned in the same language,
+			 * which is chosen from the first component.
+			 * If a name is not available in the preferred language, the geocoder uses the closest match.
+			 * The preferred language has a small influence on the set of results
+			 * that the API chooses to return, and the order in which they are returned.
+			 * The geocoder interprets abbreviations differently depending on language,
+			 * such as the abbreviations for street types,
+			 * or synonyms that may be valid in one language but not in another.
+			 * For example, utca and tér are synonyms for street in Hungarian.»
+			 * https://developers.google.com/maps/documentation/geocoding/intro#geocoding
+			 *
+			 * Замечание №1
+			 * Для Бразилии требуемое значение: «pt-BR».
+			 * *) Параметр «language» не указан: https://maps.googleapis.com/maps/api/geocode/json?address=Av.+L%C3%BAcio+Costa%2C+3150+-+Barra+da+Tijuca%2C+Rio+de+Janeiro+-+RJ%2C+22630-010&key=AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc
+			 * *) language=pt-BR: https://maps.googleapis.com/maps/api/geocode/json?language=pt-BR&address=Av.+L%C3%BAcio+Costa%2C+3150+-+Barra+da+Tijuca%2C+Rio+de+Janeiro+-+RJ%2C+22630-010&key=AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc
+			 * Единственная разница: в написании названия страны: «Brazil» / «Brasil».
+			 *
+			 * Замечание №2
+			 * Пробой выяснил, что API допускает указания значения параметра «language»
+			 * в формате @uses df_locale() («pt_BR»)
+			 * https://maps.googleapis.com/maps/api/geocode/json?language=pt_BR&address=Av.+L%C3%BAcio+Costa%2C+3150+-+Barra+da+Tijuca%2C+Rio+de+Janeiro+-+RJ%2C+22630-010&key=AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc
+			 * И это не случайное совпадение: например, если указать значение «pt_BR1»,
+			 * то API его уже не поймёт, и результат будет на английском языке.
+			 */
 			,df_locale()
 			/**         
 			 * 2017-04-24
@@ -69,6 +106,7 @@ final class Basic extends TestCase {
 			 *		"status": "OK"
 			 *	}
 			 * https://developers.google.com/maps/documentation/geocoding/intro#RegionCodes
+			 * »
 			 */
 			//
 			,null
