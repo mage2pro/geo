@@ -109,10 +109,21 @@ final class Basic extends TestCase {
 			 * »
 			 *
 			 * Мой пример:
-			 * https://maps.googleapis.com/maps/api/geocode/json?region=ru&address=Petersburg&key=AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc
+			 * *) https://maps.googleapis.com/maps/api/geocode/json?region=ru&address=Petersburg&key=AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc
 			 * Response: «St Petersburg, Russia»
-			 * https://maps.googleapis.com/maps/api/geocode/json?region=us&address=Petersburg&key=AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc
+			 * *) https://maps.googleapis.com/maps/api/geocode/json?region=us&address=Petersburg&key=AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc
 			 * Response: «Petersburg, VA, USA»
+			 *
+			 * Но вообще API достаточно умён и по дополнительным параметрам адреса определяет страну.
+			 *
+			 * *) https://maps.googleapis.com/maps/api/geocode/json?region=co.uk&address=Birmingham&key=AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc
+			 * Response: «Birmingham, UK»
+			 * *) https://maps.googleapis.com/maps/api/geocode/json?region=us&address=Birmingham&key=AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc
+			 * Response: «Birmingham, UK»
+			 * https://maps.googleapis.com/maps/api/geocode/json?region=us&address=Birmingham+Alabama&key=AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc
+			 * Response: «Birmingham, AL, USA»
+			 *
+			 * Так что, думаю, можно пока обойтись без этого параметра.
 			 */
 			,null
 			// 2017-04-24
