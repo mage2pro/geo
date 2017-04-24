@@ -26,15 +26,17 @@ final class Basic extends TestCase {
 		if (count($aa)) {
 			/** @var A $a */
 			$a = $aa->first();
+			xdebug_break();
 			// Google Maps API Reference:
 			// https://developers.google.com/maps/documentation/geocoding/intro#Types
 			echo df_dump([
+				'city' => $a->getAdminLevels()->first()->getName()
 				// 2017-04-24
 				// In my case: «BR».
 				// Google Maps API Reference:
 				// «Indicates the national political entity,
 				// and is typically the highest order type returned by the Geocoder.»
-				'country' => $a->getCountryCode()
+				,'country' => $a->getCountryCode()
 				// 2017-04-24
 				// In my case: «null».
 				// Google Maps API Reference: «Indicates an incorporated city or town political entity.»
@@ -64,7 +66,6 @@ final class Basic extends TestCase {
 				// Larger numbers indicate a smaller geographic area.».
 				,'sublocality' => $a->getSubLocality()
 			]);
-			$a->getAdminLevels();
 		}
 	}
 }
