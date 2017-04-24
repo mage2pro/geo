@@ -154,18 +154,45 @@ final class Basic extends TestCase {
 		if (count($aa)) {
 			/** @var A $a */
 			$a = $aa->first();
+			// Google Maps API Reference:
+			// https://developers.google.com/maps/documentation/geocoding/intro#Types
 			echo df_dump([
-				// 2017-04-24 In my case: «BR».
+				// 2017-04-24
+				// In my case: «BR».
+				// Google Maps API Reference:
+				// «Indicates the national political entity,
+				// and is typically the highest order type returned by the Geocoder.»
 				'country' => $a->getCountryCode()
-				// 2017-04-24 In my case: «null».
+				// 2017-04-24
+				// In my case: «null».
+				// Google Maps API Reference: «Indicates an incorporated city or town political entity.»
 				,'locality' => $a->getLocality()
-				// 2017-04-24 In my case: «22630-010».
+				// 2017-04-24
+				// In my case: «22630-010».
+				// Google Maps API Reference:
+				// «Indicates a postal code as used to address postal mail within the country.»
 				,'postalCode' => $a->getPostalCode()
-				// 2017-04-24 In my case: «Avenida Lúcio Costa».
+				/**
+				 * 2017-04-24
+				 * In my case: «Avenida Lúcio Costa».
+				 * Google Maps API Reference: «Indicates a named route (such as "US 101").»
+				 * Google Maps API это значение передаёт в поле «route»:
+				 * @see \Geocoder\Provider\GoogleMaps::updateAddressComponent()
+				 */
 				,'streetName' => $a->getStreetName()
 				// 2017-04-24 In my case: «3150».
-				,'streetNumber' => $a->getStreetNumber()
+				// Google Maps API Reference: «Indicates the precise street number.»
+				,'street_number' => $a->getStreetNumber()
+				// 2017-04-24 In my case: «Barra da Tijuca».
+				// Google Maps API Reference:
+				// «Indicates a first-order civil entity below a locality.
+				// For some locations may receive one of the additional types:
+				// sublocality_level_1 to sublocality_level_5.
+				// Each sublocality level is a civil entity.
+				// Larger numbers indicate a smaller geographic area.».
+				,'sublocality' => $a->getSubLocality()
 			]);
+			$a->getAdminLevels();
 		}
 		$a = $aa->first();
 		xdebug_break();
