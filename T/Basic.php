@@ -107,8 +107,13 @@ final class Basic extends TestCase {
 			 *	}
 			 * https://developers.google.com/maps/documentation/geocoding/intro#RegionCodes
 			 * »
+			 *
+			 * Мой пример:
+			 * https://maps.googleapis.com/maps/api/geocode/json?region=ru&address=Petersburg&key=AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc
+			 * Response: «St Petersburg, Russia»
+			 * https://maps.googleapis.com/maps/api/geocode/json?region=us&address=Petersburg&key=AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc
+			 * Response: «Petersburg, VA, USA»
 			 */
-			//
 			,null
 			// 2017-04-24
 			// PHPDoc: «Whether to use an SSL connection (optional)».
