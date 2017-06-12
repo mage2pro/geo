@@ -5,6 +5,7 @@ use Geocoder\Provider\GoogleMaps as API;
 use Ivory\HttpAdapter\CurlHttpAdapter as Adapter;
 /**
  * 2017-04-24
+ * @used-by \Dfe\Moip\P\Reg::ga()
  * @param string $key
  * @param string|null $locale [optional]
  * @param string|null $tld [optional]
@@ -138,6 +139,7 @@ function df_geo($key, $locale = null, $tld = null) {return dfcf(function($key, $
  * Within the United States, these administrative levels are counties.
  * Not all nations exhibit these administrative levels.»
  * https://developers.google.com/maps/documentation/geocoding/intro#Types
+ * @used-by \Dfe\Moip\P\Reg::pShippingAddress()
  * @param A $a
  * @return string|null
  */
@@ -157,6 +159,7 @@ function df_geo_city(A $a) {
  * and other widely circulated lists; however this is not guaranteed
  * as our geocoding results are based on a variety of signals and location data.»
  * https://developers.google.com/maps/documentation/geocoding/intro#Types
+ * @used-by \Dfe\Moip\P\Reg::pShippingAddress()
  * @param A $a
  * @return string|null
  */
