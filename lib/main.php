@@ -5,7 +5,8 @@ use Geocoder\Provider\GoogleMaps as API;
 use Ivory\HttpAdapter\CurlHttpAdapter as Adapter;
 /**
  * 2017-04-24
- * @used-by \Dfe\Moip\P\Reg::ga()
+ * @used-by \Dfe\Moip\P\Charge::pAddress()
+ * @used-by \Dfe\Moip\T\Data::ga()
  * @param string $key
  * @param string|null $locale [optional]
  * @param string|null $tld [optional]
