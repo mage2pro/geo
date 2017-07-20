@@ -2,13 +2,10 @@
 namespace Df\Geo\T;
 use Geocoder\Model\Address as A;
 use Geocoder\Model\AddressCollection as AA;
-use Geocoder\Provider\GoogleMaps as API;
 // 2017-04-24
 final class Basic extends TestCase {
-	/** @test 2017-04-24 */
+	/** 2017-04-24 */
 	function t01() {
-		/** @var API $api */
-		$api = df_geo('AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc');
 		// 2017-04-24
 		// Google Maps API Reference: «The street address that you want to geocode,
 		// in the format used by the national postal service of the country concerned.
@@ -16,7 +13,9 @@ final class Basic extends TestCase {
 		// should be avoided. Please refer to the FAQ for additional guidance.»
 		// https://developers.google.com/maps/documentation/geocoding/intro#geocoding
 		/** @var AA $aa */
-		$aa = $api->geocode('Av. Lúcio Costa, 3150 - Barra da Tijuca, Rio de Janeiro - RJ, 22630-010');
+		$aa = df_geo(self::$K)->all(
+			'Av. Lúcio Costa, 3150 - Barra da Tijuca, Rio de Janeiro - RJ, 22630-010'
+		);
 		/**
 		 * 2017-04-24
 		 * Обращение к несуществующим элементам приводит к исключительной ситуации:
@@ -68,4 +67,19 @@ final class Basic extends TestCase {
 			]);
 		}
 	}
+	
+	/** @test 2017-07-20 */
+	function t02() {
+		/** @var A $a */
+		$a = df_geo(self::$K, 'pt-BR', 'br')->p('fasfesedf Rio de Janeiro 201111111');
+		echo df_json_encode($a->toArray());
+	}
+
+	/**
+	 * 2017-07-20
+	 * @const
+	 * @used-by t01()
+	 * @used-by t02()
+	 */
+	private static $K = 'AIzaSyBj8bPt0PeSxcgPW8vTfNI2xKdhkHCUYuc';
 }
