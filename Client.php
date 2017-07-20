@@ -182,7 +182,7 @@ final class Client {
 	 * @return F
 	 */
 	private function onError($a, $f) {return function(E $e) use($a, $f) {return $f instanceof F ? $f($e) :
-		(true === $f ? df_error('Unable to recognize the address: «%s».', $a) : $f)
+		(true === $f ? df_error('Unable to recognize the address: «%1».', $a) : $f)
 	;};}
 
 	/**
