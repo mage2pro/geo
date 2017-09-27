@@ -28,7 +28,7 @@ final class Basic extends TestCase {
 			xdebug_break();
 			// Google Maps API Reference:
 			// https://developers.google.com/maps/documentation/geocoding/intro#Types
-			echo df_dump([
+			print_r(df_dump([
 				'city' => $a->getAdminLevels()->first()->getName()
 				// 2017-04-24
 				// In my case: «BR».
@@ -64,7 +64,7 @@ final class Basic extends TestCase {
 				// Each sublocality level is a civil entity.
 				// Larger numbers indicate a smaller geographic area.».
 				,'sublocality' => $a->getSubLocality()
-			]);
+			]));
 		}
 	}
 	
@@ -72,7 +72,7 @@ final class Basic extends TestCase {
 	function t02() {
 		/** @var A $a */
 		$a = df_geo(self::$K, 'pt-BR', 'br')->p('fasfesedf Rio de Janeiro 201111111');
-		echo df_json_encode($a->toArray());
+		print_r(df_json_encode($a->toArray()));
 	}
 
 	/**
