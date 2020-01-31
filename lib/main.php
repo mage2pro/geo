@@ -6,7 +6,7 @@ use Geocoder\Model\AdminLevelCollection as ALs;
  * 2017-04-24
  * @used-by \Df\Geo\Test\Basic::t01()
  * @used-by \Dfe\Moip\P\Charge::pAddress()
- * @used-by \Dfe\Moip\T\Data::ga()
+ * @used-by \Dfe\Moip\Test\Data::ga()
  * @param string $key
  * @param string|null $locale [optional]
  * @param string|null $tld [optional]

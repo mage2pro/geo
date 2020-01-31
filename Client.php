@@ -29,7 +29,7 @@ final class Client {
 	/**
 	 * 2017-07-20
 	 * @used-by \Dfe\Moip\P\Charge::pAddress()
-	 * @used-by \Dfe\Moip\T\Data::ga()
+	 * @used-by \Dfe\Moip\Test\Data::ga()
 	 * @param A|string $a
 	 * @param bool|F $onError [optional]
 	 * @return GA|mixed
