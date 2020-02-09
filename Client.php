@@ -13,7 +13,7 @@ final class Client {
 	/**
 	 * 2017-07-20
 	 * @used-by p()
-	 * @used-by \Df\Geo\Test\Basic::t01()
+	 * @used-by \Df\Geo\T\Basic::t01()
 	 * @param A|string $a
 	 * @param bool|F $onError [optional]
 	 * @return AA|mixed

@@ -1,5 +1,5 @@
 <?php
-namespace Df\Geo\Test;
+namespace Df\Geo\T;
 use Geocoder\Model\Address as A;
 use Geocoder\Model\AddressCollection as AA;
 // 2017-04-24
