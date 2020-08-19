@@ -8,7 +8,7 @@ use Geocoder\Model\AddressCollection as AA;
 use Geocoder\Provider\GoogleMaps as API;
 use Ivory\HttpAdapter\CurlHttpAdapter as Adapter;
 use Magento\Sales\Model\Order\Address as A;
-// 2017-07-20
+# 2017-07-20
 final class Client {
 	/**
 	 * 2017-07-20
@@ -155,15 +155,15 @@ final class Client {
 		 * Так что, думаю, можно пока обойтись без этого параметра.
 		 */
 		,$tld
-		// 2017-04-24
-		// PHPDoc: «Whether to use an SSL connection (optional)».
-		// Google Maps требует значение true.
+		# 2017-04-24
+		# PHPDoc: «Whether to use an SSL connection (optional)».
+		# Google Maps требует значение true.
 		,true
-		// 2017-04-24
-		// Google Maps API Reference: «Your application's API key.
-		// This key identifies your application for purposes of quota management.»
-		// https://developers.google.com/maps/documentation/geocoding/intro#geocoding
-		// «How to generate a key for the Google Maps Geocoding API?» https://mage2.pro/t/3828
+		# 2017-04-24
+		# Google Maps API Reference: «Your application's API key.
+		# This key identifies your application for purposes of quota management.»
+		# https://developers.google.com/maps/documentation/geocoding/intro#geocoding
+		# «How to generate a key for the Google Maps Geocoding API?» https://mage2.pro/t/3828
 		,$key
 	);}
 
