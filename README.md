@@ -1,1 +1,37 @@
-You should not install this package directly: it is installed automatically by [Composer](https://getcomposer.org/) with my «[**Moip**](https://mage2.pro/c/extensions/moip)» Magento 2 extension.
+## How to install
+[Hire me in Upwork](https://www.upwork.com/fl/mage2pro), and I will: 
+- install and configure the module properly on your website
+- answer your questions
+- solve compatiblity problems with third-party checkout, shipping, marketing modules
+- implement new features you need 
+
+### 2. Self-installation
+```
+bin/magento maintenance:enable
+rm -f composer.lock
+composer clear-cache
+composer require mage2pro/geo:* --ignore-platform-req=php
+bin/magento setup:upgrade
+bin/magento cache:enable
+rm -rf var/di var/generation generated/code
+bin/magento setup:di:compile
+rm -rf pub/static/*
+bin/magento setup:static-content:deploy -f en_US <additional locales>
+bin/magento maintenance:disable
+```
+
+## How to update
+```
+bin/magento maintenance:enable
+composer remove mage2pro/geo
+rm -f composer.lock
+composer clear-cache
+composer require mage2pro/geo:* --ignore-platform-req=php
+bin/magento setup:upgrade
+bin/magento cache:enable
+rm -rf var/di var/generation generated/code
+bin/magento setup:di:compile
+rm -rf pub/static/*
+bin/magento setup:static-content:deploy -f en_US <additional locales>
+bin/magento maintenance:disable
+```
