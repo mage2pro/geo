@@ -12,7 +12,7 @@ use Magento\Sales\Model\Order\Address as A;
 final class Client {
 	/**
 	 * 2017-07-20
-	 * @used-by p()
+	 * @used-by self::p()
 	 * @used-by \Df\Geo\Test\Basic::t01()
 	 * @param A|string $a
 	 * @param bool|F $onError [optional]
@@ -43,7 +43,7 @@ final class Client {
 
 	/**
 	 * 2017-07-20
-	 * @used-by s()
+	 * @used-by self::s()
 	 * @param string $key
 	 * @param string|null $locale [optional]
 	 * @param string|null $tld [optional]
@@ -175,8 +175,8 @@ final class Client {
 	 * The system should show an end-user message instead.»
 	 * https://github.com/mage2pro/moip/issues/2
 	 * https://sentry.io/dmitry-fedyuk/mage2pro/issues/314072005
-	 * @used-by all()
-	 * @used-by p()
+	 * @used-by self::all()
+	 * @used-by self::p()
 	 * @param string $a
 	 * @param bool|F $f
 	 * @return F
@@ -187,8 +187,8 @@ final class Client {
 
 	/**
 	 * 2017-07-20
-	 * @used-by __construct()
-	 * @used-by p()
+	 * @used-by self::__construct()
+	 * @used-by self::p()
 	 * @var API
 	 */
 	private $_api;
