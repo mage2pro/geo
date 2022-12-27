@@ -38,7 +38,7 @@ function df_geo_city(A $a):string {
  * and other widely circulated lists; however this is not guaranteed
  * as our geocoding results are based on a variety of signals and location data.»
  * https://developers.google.com/maps/documentation/geocoding/intro#Types
- * @used-by \Dfe\Moip\P\Reg::pShippingAddress()
+ * @used-by \Dfe\Moip\P\Charge::pAddress()
  */
 function df_geo_state_code(A $a):string {
 	$l = $a->getAdminLevels(); /** @var ALs $l */
