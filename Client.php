@@ -185,9 +185,8 @@ final class Client {
 	 * https://sentry.io/dmitry-fedyuk/mage2pro/issues/314072005
 	 * @used-by self::all()
 	 * @used-by self::p()
-	 * @param string $a
 	 */
-	private function onError($a, $f):F {return function(E $e) use($a, $f) {return $f instanceof F ? $f($e) :
+	private function onError(string $a, $f):F {return function(E $e) use($a, $f) {return $f instanceof F ? $f($e) :
 		(true === $f ? df_error('Unable to recognize the address: «%1».', $a) : $f)
 	;};}
 
