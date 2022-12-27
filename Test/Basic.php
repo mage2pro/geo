@@ -67,7 +67,7 @@ final class Basic extends CaseT {
 	}
 	
 	/** 2017-07-20 @test */
-	function t02() {
+	function t02():void {
 		/** @var A $a */
 		$a = df_geo(self::$K, 'pt-BR', 'br')->p('fasfesedf Rio de Janeiro 201111111');
 		print_r(df_json_encode($a->toArray()));
