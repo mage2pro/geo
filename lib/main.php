@@ -22,11 +22,10 @@ function df_geo(string $k, string $l = '', string $region = ''):C {return dfcf(
  * https://developers.google.com/maps/documentation/geocoding/intro#Types
  * @used-by \Dfe\Moip\P\Charge::pAddress()
  * @used-by \Dfe\Moip\Test\Data::address()
- * @return string|null
  */
-function df_geo_city(A $a) {
+function df_geo_city(A $a):string {
 	$als = $a->getAdminLevels(); /** @var ALs $als */
-	return 1 < $als->count() ? $als->get(1)->getName() : null;
+	return 1 < $als->count() ? $als->get(1)->getName() : '';
 }
 
 /**
