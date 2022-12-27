@@ -12,42 +12,11 @@ use Magento\Sales\Model\Order\Address as A;
 final class Client {
 	/**
 	 * 2017-07-20
-	 * @used-by self::p()
-	 * @used-by \Df\Geo\Test\Basic::t01()
-	 * @param A|string $a
-	 * @param bool|F $onError [optional]
-	 * @return AA|mixed
-	 * @throws DFE
-	 */
-	function all($a, $onError = true) {
-		if ($a instanceof A) {
-			$a = df_csv_pretty($a->getStreet(), $a->getCity(), $a->getRegion(), $a->getPostcode());
-		}
-		return df_try(function() use($a) {return $this->_api->geocode($a);}, $this->onError($a, $onError));
-	}
-
-	/**
-	 * 2017-07-20
-	 * @used-by \Dfe\Moip\P\Charge::pAddress()
-	 * @used-by \Dfe\Moip\Test\Data::ga()
-	 * @param A|string $a
-	 * @param bool|F $onError [optional]
-	 * @return GA|mixed
-	 * @throws DFE
-	 */
-	function p($a, $onError = true) {return
-		!($all = $this->all($a, $onError)/** @var AA|mixed $all */) instanceof AA ? $all : df_try(
-			function() use($all) {return $all->first();}, $this->onError($a, $onError)
-		);
-	}
-
-	/**
-	 * 2017-07-20
-	 * @used-by self::s()
+	 * @used-by df_geo()
 	 * @param string|null $locale [optional]
 	 * @param string|null $tld [optional]
 	 */
-	private function __construct(string $key, $locale = null, $tld = null) {
+	function __construct(string $key, $locale = null, $tld = null) {
 		# 2022-10-26 https://github.com/geocoder-php/Geocoder/tree/4.3.0#usage
 		$this->_api = new API(
 			new Provider(
@@ -171,6 +140,37 @@ final class Client {
 
 	/**
 	 * 2017-07-20
+	 * @used-by self::p()
+	 * @used-by \Df\Geo\Test\Basic::t01()
+	 * @param A|string $a
+	 * @param bool|F $onError [optional]
+	 * @return AA|mixed
+	 * @throws DFE
+	 */
+	function all($a, $onError = true) {
+		if ($a instanceof A) {
+			$a = df_csv_pretty($a->getStreet(), $a->getCity(), $a->getRegion(), $a->getPostcode());
+		}
+		return df_try(function() use($a) {return $this->_api->geocode($a);}, $this->onError($a, $onError));
+	}
+
+	/**
+	 * 2017-07-20
+	 * @used-by \Dfe\Moip\P\Charge::pAddress()
+	 * @used-by \Dfe\Moip\Test\Data::ga()
+	 * @param A|string $a
+	 * @param bool|F $onError [optional]
+	 * @return GA|mixed
+	 * @throws DFE
+	 */
+	function p($a, $onError = true) {return
+		!($all = $this->all($a, $onError)/** @var AA|mixed $all */) instanceof AA ? $all : df_try(
+			function() use($all) {return $all->first();}, $this->onError($a, $onError)
+		);
+	}
+
+	/**
+	 * 2017-07-20
 	 * It fixes the issue:
 	 * «When a customer tries to place an order with a fake address,
 	 * the system shows him a low level Google Maps Geocoding API error.
@@ -194,15 +194,4 @@ final class Client {
 	 * @var API
 	 */
 	private $_api;
-
-	/**
-	 * 2017-07-20
-	 * @used-by df_geo()
-	 * @param string|null $l [optional]
-	 * @param string|null $tld [optional]
-	 * @return self
-	 */
-	static function s(string $key, $l = null, $tld = null) {return dfcf(function($key, $l, $tld) {return new self(
-		$key, $l, $tld
-	);}, [$key, df_locale($l), $tld]);}
 }
