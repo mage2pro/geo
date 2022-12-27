@@ -186,10 +186,8 @@ final class Client {
 	 * @used-by self::all()
 	 * @used-by self::p()
 	 * @param string $a
-	 * @param bool|F $f
-	 * @return F
 	 */
-	private function onError($a, $f) {return function(E $e) use($a, $f) {return $f instanceof F ? $f($e) :
+	private function onError($a, $f):F {return function(E $e) use($a, $f) {return $f instanceof F ? $f($e) :
 		(true === $f ? df_error('Unable to recognize the address: «%1».', $a) : $f)
 	;};}
 
