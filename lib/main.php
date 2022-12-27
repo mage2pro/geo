@@ -39,7 +39,6 @@ function df_geo_city(A $a):string {
  * as our geocoding results are based on a variety of signals and location data.»
  * https://developers.google.com/maps/documentation/geocoding/intro#Types
  * @used-by \Dfe\Moip\P\Reg::pShippingAddress()
- * @param A $a
  * @return string|null
  */
 function df_geo_state_code(A $a) {
