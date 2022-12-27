@@ -171,7 +171,7 @@ final class Client {
 	 */
 	function p($a, $onError = true) {return
 		!($all = $this->all($a, $onError)/** @var AA|mixed $all */) instanceof AA ? $all : df_try(
-			function() use($all) {return $all->first();}, $this->onError($a, $onError)
+			function() use($all):GA {return $all->first();}, $this->onError($a, $onError)
 		);
 	}
 
