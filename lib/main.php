@@ -42,7 +42,6 @@ function df_geo_city(A $a):string {
  * @return string|null
  */
 function df_geo_state_code(A $a) {
-	/** @var ALs $als */
-	$als = $a->getAdminLevels();
+	$als = $a->getAdminLevels(); /** @var ALs $als */
 	return $als->count() ? $als->first()->getCode() : null;
 }
