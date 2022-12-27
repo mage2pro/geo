@@ -68,7 +68,7 @@ final class Basic extends CaseT {
 		}
 	}
 	
-	/** @test 2017-07-20 */
+	/** 2017-07-20 @test */
 	function t02() {
 		/** @var A $a */
 		$a = df_geo(self::$K, 'pt-BR', 'br')->p('fasfesedf Rio de Janeiro 201111111');
