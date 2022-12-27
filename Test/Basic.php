@@ -5,7 +5,7 @@ use Geocoder\Model\AddressCollection as AA;
 # 2017-04-24
 final class Basic extends CaseT {
 	/** 2017-04-24 */
-	function t01() {
+	function t01():void {
 		# 2017-04-24
 		# Google Maps API Reference: «The street address that you want to geocode,
 		# in the format used by the national postal service of the country concerned.
