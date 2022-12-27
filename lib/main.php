@@ -8,9 +8,9 @@ use Geocoder\Model\AdminLevelCollection as ALs;
  * @used-by \Dfe\Moip\P\Charge::pAddress()
  * @used-by \Dfe\Moip\Test\Data::ga()
  */
-function df_geo(string $key, string $l = '', string $region = ''):C {return dfcf(
-	function(string $key, string $l, string $region) {return new C($key, $l, $region);}
-	,[$key, df_locale($l), $region]
+function df_geo(string $k, string $l = '', string $region = ''):C {return dfcf(
+	function(string $k, string $l, string $region) {return new C($k, $l, $region);}
+	,[$k, df_locale($l), $region]
 );}
 
 /**
