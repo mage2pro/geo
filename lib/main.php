@@ -7,11 +7,11 @@ use Geocoder\Model\AdminLevelCollection as ALs;
  * @used-by \Df\Geo\Test\Basic::t01()
  * @used-by \Dfe\Moip\P\Charge::pAddress()
  * @used-by \Dfe\Moip\Test\Data::ga()
- * @param string|null $l [optional]
+ * @param string $l [optional]
  * @param string|null $tld [optional]
  * @return C
  */
-function df_geo(string $key, $l = null, $tld = null) { {return dfcf(function(string $key, $l, $tld) {return new C(
+function df_geo(string $key, string $l = '', $tld = null) { {return dfcf(function(string $key, $l, $tld) {return new C(
 	$key, $l, $tld
 );}, [$key, df_locale($l), $tld]);}}
 
