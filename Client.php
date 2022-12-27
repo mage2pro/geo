@@ -149,15 +149,15 @@ final class Client {
 	 * @used-by self::p()
 	 * @used-by \Df\Geo\Test\Basic::t01()
 	 * @param A|string $a
-	 * @param bool|F $onError [optional]
+	 * @param bool|F $onE [optional]
 	 * @return AA|mixed
 	 * @throws DFE
 	 */
-	function all($a, $onError = true) {
+	function all($a, $onE = true) {
 		if ($a instanceof A) {
 			$a = df_csv_pretty($a->getStreet(), $a->getCity(), $a->getRegion(), $a->getPostcode());
 		}
-		return df_try(function() use($a):AA {return $this->_api->geocode($a);}, $this->onError($a, $onError));
+		return df_try(function() use($a):AA {return $this->_api->geocode($a);}, $this->onError($a, $onE));
 	}
 
 	/**
@@ -165,13 +165,13 @@ final class Client {
 	 * @used-by \Dfe\Moip\P\Charge::pAddress()
 	 * @used-by \Dfe\Moip\Test\Data::ga()
 	 * @param A|string $a
-	 * @param bool|F $onError [optional]
+	 * @param bool|F $onE [optional]
 	 * @return GA|mixed
 	 * @throws DFE
 	 */
-	function p($a, $onError = true) {return
-		!($all = $this->all($a, $onError)/** @var AA|mixed $all */) instanceof AA ? $all : df_try(
-			function() use($all):GA {return $all->first();}, $this->onError($a, $onError)
+	function p($a, $onE = true) {return
+		!($all = $this->all($a, $onE)/** @var AA|mixed $all */) instanceof AA ? $all : df_try(
+			function() use($all):GA {return $all->first();}, $this->onError($a, $onE)
 		);
 	}
 
