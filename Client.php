@@ -44,11 +44,10 @@ final class Client {
 	/**
 	 * 2017-07-20
 	 * @used-by self::s()
-	 * @param string $key
 	 * @param string|null $locale [optional]
 	 * @param string|null $tld [optional]
 	 */
-	private function __construct($key, $locale = null, $tld = null) {
+	private function __construct(string $key, $locale = null, $tld = null) {
 		# 2022-10-26 https://github.com/geocoder-php/Geocoder/tree/4.3.0#usage
 		$this->_api = new API(
 			new Provider(
