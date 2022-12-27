@@ -9,9 +9,9 @@ use Geocoder\Model\AdminLevelCollection as ALs;
  * @used-by \Dfe\Moip\Test\Data::ga()
  * @param string|null $tld [optional]
  */
-function df_geo(string $key, string $l = '', $tld = null):C {return dfcf(function(string $key, string $l, $tld) {return new C(
-	$key, $l, $tld
-);}, [$key, df_locale($l), $tld]);}
+function df_geo(string $key, string $l = '', string $region = ''):C {return dfcf(function(string $key, string $l, $region) {return new C(
+	$key, $l, $region
+);}, [$key, df_locale($l), $region]);}
 
 /**
  * 2017-04-24
