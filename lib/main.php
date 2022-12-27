@@ -11,9 +11,9 @@ use Geocoder\Model\AdminLevelCollection as ALs;
  * @param string|null $tld [optional]
  * @return C
  */
-function df_geo(string $key, string $l = '', $tld = null) { {return dfcf(function(string $key, $l, $tld) {return new C(
+function df_geo(string $key, string $l = '', $tld = null) {return dfcf(function(string $key, $l, $tld) {return new C(
 	$key, $l, $tld
-);}, [$key, df_locale($l), $tld]);}}
+);}, [$key, df_locale($l), $tld]);}
 
 /**
  * 2017-04-24
