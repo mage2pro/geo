@@ -85,7 +85,7 @@ final class Client {
 				 *
 				 * Так что, думаю, можно пока обойтись без этого параметра.
 				 */
-				,$tld
+				,$region
 				# 2017-04-24
 				# Google Maps API Reference: «Your application's API key.
 				# This key identifies your application for purposes of quota management.»
