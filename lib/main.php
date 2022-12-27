@@ -24,8 +24,7 @@ function df_geo(string $k, string $l = '', string $region = ''):C {return dfcf(
  * @return string|null
  */
 function df_geo_city(A $a) {
-	/** @var ALs $als */
-	$als = $a->getAdminLevels();
+	$als = $a->getAdminLevels(); /** @var ALs $als */
 	return 1 < $als->count() ? $als->get(1)->getName() : null;
 }
 
