@@ -13,9 +13,7 @@ final class Basic extends CaseT {
 		# should be avoided. Please refer to the FAQ for additional guidance.»
 		# https://developers.google.com/maps/documentation/geocoding/intro#geocoding
 		/** @var AA $aa */
-		$aa = df_geo(self::$K)->all(
-			'Av. Lúcio Costa, 3150 - Barra da Tijuca, Rio de Janeiro - RJ, 22630-010'
-		);
+		$aa = df_geo(self::$K)->all('Av. Lúcio Costa, 3150 - Barra da Tijuca, Rio de Janeiro - RJ, 22630-010');
 		/**
 		 * 2017-04-24
 		 * Обращение к несуществующим элементам приводит к исключительной ситуации:
