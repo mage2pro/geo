@@ -20,7 +20,8 @@ function df_geo(string $k, string $l = '', string $region = ''):C {return dfcf(
  * Within the United States, these administrative levels are counties.
  * Not all nations exhibit these administrative levels.»
  * https://developers.google.com/maps/documentation/geocoding/intro#Types
- * @used-by \Dfe\Moip\P\Reg::pShippingAddress()
+ * @used-by \Dfe\Moip\P\Charge::pAddress()
+ * @used-by \Dfe\Moip\Test\Data::address()
  * @return string|null
  */
 function df_geo_city(A $a) {
