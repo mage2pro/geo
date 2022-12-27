@@ -198,12 +198,11 @@ final class Client {
 	/**
 	 * 2017-07-20
 	 * @used-by df_geo()
-	 * @param string $key
 	 * @param string|null $l [optional]
 	 * @param string|null $tld [optional]
 	 * @return self
 	 */
-	static function s($key, $l = null, $tld = null) {return dfcf(function($key, $l, $tld) {return new self(
+	static function s(string $key, $l = null, $tld = null) {return dfcf(function($key, $l, $tld) {return new self(
 		$key, $l, $tld
 	);}, [$key, df_locale($l), $tld]);}
 }
