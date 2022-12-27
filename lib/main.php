@@ -24,8 +24,8 @@ function df_geo(string $k, string $l = '', string $region = ''):C {return dfcf(
  * @used-by \Dfe\Moip\Test\Data::address()
  */
 function df_geo_city(A $a):string {
-	$als = $a->getAdminLevels(); /** @var ALs $als */
-	return 1 < $als->count() ? $als->get(1)->getName() : '';
+	$l = $a->getAdminLevels(); /** @var ALs $l */
+	return 1 < $l->count() ? $l->get(1)->getName() : '';
 }
 
 /**
@@ -42,6 +42,6 @@ function df_geo_city(A $a):string {
  * @return string|null
  */
 function df_geo_state_code(A $a) {
-	$als = $a->getAdminLevels(); /** @var ALs $als */
-	return $als->count() ? $als->first()->getCode() : null;
+	$l = $a->getAdminLevels(); /** @var ALs $l */
+	return $l->count() ? $l->first()->getCode() : null;
 }
