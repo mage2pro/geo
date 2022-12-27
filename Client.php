@@ -157,7 +157,7 @@ final class Client {
 		if ($a instanceof A) {
 			$a = df_csv_pretty($a->getStreet(), $a->getCity(), $a->getRegion(), $a->getPostcode());
 		}
-		return df_try(function() use($a) {return $this->_api->geocode($a);}, $this->onError($a, $onError));
+		return df_try(function() use($a):AA {return $this->_api->geocode($a);}, $this->onError($a, $onError));
 	}
 
 	/**
