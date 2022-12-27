@@ -84,8 +84,14 @@ final class Client {
 				 * Response: «Birmingham, AL, USA»
 				 *
 				 * Так что, думаю, можно пока обойтись без этого параметра.
+				 *
+				 * 2022-12-17
+				 * @see \Geocoder\Provider\GoogleMaps\GoogleMaps::buildQuery():
+				 *		if (null !== $region) {
+				 *			$url = sprintf('%s&region=%s', $url, $region);
+				 *		}
 				 */
-				,$region
+				,df_etn($region)
 				# 2017-04-24
 				# Google Maps API Reference: «Your application's API key.
 				# This key identifies your application for purposes of quota management.»
