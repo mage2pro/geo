@@ -86,10 +86,12 @@ final class Client {
 				 * Так что, думаю, можно пока обойтись без этого параметра.
 				 *
 				 * 2022-12-17
+				 * I use @see df_etn() because of:
 				 * @see \Geocoder\Provider\GoogleMaps\GoogleMaps::buildQuery():
 				 *		if (null !== $region) {
 				 *			$url = sprintf('%s&region=%s', $url, $region);
 				 *		}
+				 * https://github.com/geocoder-php/Geocoder/blob/4.3.0/src/Provider/GoogleMaps/GoogleMaps.php#L179-L181
 				 */
 				,df_etn($region)
 				# 2017-04-24
