@@ -1,5 +1,5 @@
 <?php
-namespace Df\Geo;
+namespace Dfe\Geo;
 use Closure as F;
 use Df\Core\Exception as DFE;
 use Exception as E;
@@ -147,7 +147,7 @@ final class Client {
 	/**
 	 * 2017-07-20
 	 * @used-by self::p()
-	 * @used-by \Df\Geo\Test\Basic::t01()
+	 * @used-by \Dfe\Geo\Test\Basic::t01()
 	 * @param A|string $a
 	 * @param bool|F $onE [optional]
 	 * @return AA|mixed

@@ -1,10 +1,10 @@
 <?php
-use Df\Geo\Client as C;
+use Dfe\Geo\Client as C;
 use Geocoder\Model\Address as A;
 use Geocoder\Model\AdminLevelCollection as ALs;
 /**
  * 2017-04-24
- * @used-by \Df\Geo\Test\Basic::t01()
+ * @used-by \Dfe\Geo\Test\Basic::t01()
  * @used-by \Dfe\Moip\P\Charge::pAddress()
  * @used-by \Dfe\Moip\Test\Data::ga()
  */

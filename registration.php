@@ -1,6 +1,6 @@
 <?php
 use Magento\Framework\Component\ComponentRegistrar as R;
-R::register(R::MODULE, 'Df_Geo', __DIR__);
+R::register(R::MODULE, 'Dfe_Geo', __DIR__);
 # 2017-04-25, 2017-12-13
 # Unfortunately, I have not found a way to make this code reusable among my modules.
 # I tried to move this code to a `/lib` function like df_lib(), but it raises a «chicken and egg» problem,

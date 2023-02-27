@@ -1,6 +1,6 @@
 {
 	"name": "mage2pro/geo"
-	,"version": "1.4.0"
+	,"version": "1.4.1"
 	,"description": "A geocoding library for my Magento 2 extensions."
 	,"type": "magento2-module"
 	,"homepage": "https://github.com/mage2pro/geo"
@@ -12,5 +12,5 @@
 		"role": "Developer"
 	}]
 	,"require": {"mage2pro/core": ">=9.0.4", "geocoder-php/google-maps-provider": "*", "php-http/guzzle7-adapter":  "*"}
-	,"autoload": {"files": ["registration.php"], "psr-4": {"Df\\Geo\\": ""}}
+	,"autoload": {"files": ["registration.php"], "psr-4": {"Dfe\\Geo\\": ""}}
 }
