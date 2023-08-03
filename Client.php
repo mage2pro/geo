@@ -1,13 +1,13 @@
 <?php
 namespace Dfe\Geo;
-use Closure as F;
 use Df\Core\Exception as DFE;
-use Exception as E;
 use Geocoder\Model\Address as GA;
 use Geocoder\Model\AddressCollection as AA;
 use Geocoder\Provider\GoogleMaps\GoogleMaps as Provider;
 use Geocoder\StatefulGeocoder as API;
 use Magento\Sales\Model\Order\Address as A;
+use \Closure as F;
+use \Throwable as Th; # 2023-08-03 "Treat `\Throwable` similar to `\Exception`": https://github.com/mage2pro/core/issues/311
 # 2017-07-20
 final class Client {
 	/**
@@ -188,7 +188,7 @@ final class Client {
 	 * @param bool|F $f
 	 * @return mixed
 	 */
-	private function onError(string $a, $f):F {return function(E $e) use($a, $f) {return $f instanceof F ? $f($e) :
+	private function onError(string $a, $f):F {return function(Th $th) use($a, $f) {return $f instanceof F ? $f($th) :
 		(true === $f ? df_error('Unable to recognize the address: «%1».', $a) : $f)
 	;};}
 
